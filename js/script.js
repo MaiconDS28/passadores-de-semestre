@@ -13,7 +13,7 @@ document.getElementById('cadastroForm').addEventListener('submit', function(e) {
     estado: this.estado.value
   };
 
-  fetch("https://script.google.com/macros/s/1nmG7H8_uO-bz6d36JjsBdUgMvhXyxJs_H5B8-P51fDlnh89-XVkd985-/exec", {
+  fetch("https://script.google.com/macros/s/AKfycbzfuT-TDu8tqt_NOenZIQYEzrXlxIQnO7PrNd0rHcQqoC_dqhjZQuwoe9sti9IxqxGT/exec", {
     method: "POST",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify(formData)

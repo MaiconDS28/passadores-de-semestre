@@ -1,38 +1,66 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Projetos - Passadores de Semestre</title>
-    <link rel="stylesheet" href="css/style.css">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="description" content="Lista de projetos sociais — voluntariado e doações." />
+  <title>Projetos — Passadores de Semestres</title>
+  <link rel="stylesheet" href="css/styles.css">
 </head>
-<body>
-    <header>
-        <h1>Projetos Sociais</h1>
-        <nav>
-            <a href="index.html">Início</a>
-            <a href="projetos.html">Projetos</a>
-            <a href="cadastro.html">Cadastro</a>
-        </nav>
-    </header>
+<body class="theme-dark">
+  <a class="skip-link" href="#main">Ir para o conteúdo</a>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="index.html" class="brand">Passadores de Semestres</a>
+      <nav aria-label="Navegação principal">
+        <ul class="main-nav">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="projetos.html" aria-current="page">Projetos</a></li>
+          <li><a href="cadastro.html">Cadastre-se</a></li>
+          <li><a href="capitacao.html">Captação</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
 
-    <main>
-        <section>
-            <h2>Projetos em Andamento</h2>
-            <p>Conheça nossos projetos e descubra como você pode contribuir!</p>
-        </section>
-        <section>
-            <h4>Passar o Maicon Douglas de Semestre</h4>
-            <p>Com criatividade fazendo projetos para a UDF, deixe uma boa avaliação</p>
-        </section>
-        <section>
-            <h4>Estudos com Html5 e CSS3</h4>
-            <p>Estudando sempre que tem disponibilidade, para ajudar não me chame pra um RPG</p>
-        </section>
-    </main>
+  <main id="main" class="container">
+    <h1>Projetos</h1>
 
-    <footer>
-        <p>© 2° 2025 Passadores de Semestre. Todos os direitos reservados a Maicon Douglas e UDF.</p>
-    </footer>
+    <section aria-labelledby="lista-projetos">
+      <h2 id="lista-projetos">Projetos sociais</h2>
+
+      <ul class="project-list">
+        <li id="proj-1">
+          <article>
+            <h3>Oficinas de leitura</h3>
+            <p>Voluntários leem e organizam rodas de leitura para crianças.</p>
+            <a href="cadastro.html" class="cta">Quero participar</a>
+          </article>
+        </li>
+        <li id="proj-2">
+          <article>
+            <h3>Materiais para estudantes</h3>
+            <p>Distribuição de kits escolares e livros.</p>
+            <a href="cadastro.html" class="cta">Quero participar</a>
+          </article>
+        </li>
+        <li id="proj-3">
+          <article>
+            <h3>Fundo de emergência</h3>
+            <p>Atendimento imediato para famílias em situação crítica.</p>
+            <a href="cadastro.html" class="cta">Quero participar</a>
+          </article>
+        </li>
+      </ul>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>&copy; <span id="ano2"></span> Passadores de Semestres</p>
+    </div>
+  </footer>
+
+  <script src="js/scripts.js" defer></script>
 </body>
 </html>

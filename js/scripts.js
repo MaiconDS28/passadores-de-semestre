@@ -1,0 +1,2 @@
+// scripts placeholder
+document.addEventListener('DOMContentLoaded', function(){ const year = new Date().getFullYear(); ['ano','ano2','ano3'].forEach(id=>{const el=document.getElementById(id); if(el) el.textContent=year;}); });

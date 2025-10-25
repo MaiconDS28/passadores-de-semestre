@@ -12,22 +12,22 @@
                 var firstSheetName = workbook.SheetNames[0];
                 var worksheet = workbook.Sheets[firstSheetName];
 
-                // Convert sheet to JSON to filter blank rows
+                
                 var jsonData = XLSX.utils.sheet_to_json(worksheet, { header: 1, blankrows: false, defval: '' });
-                // Filter out blank rows (rows where all cells are empty, null, or undefined)
+                
                 var filteredData = jsonData.filter(row => row.some(filledCell));
 
-                // Heuristic to find the header row by ignoring rows with fewer filled cells than the next row
+                
                 var headerRowIndex = filteredData.findIndex((row, index) =>
                   row.filter(filledCell).length >= filteredData[index + 1]?.filter(filledCell).length
                 );
-                // Fallback
+                
                 if (headerRowIndex === -1 || headerRowIndex > 25) {
                   headerRowIndex = 0;
                 }
 
-                // Convert filtered JSON back to CSV
-                var csv = XLSX.utils.aoa_to_sheet(filteredData.slice(headerRowIndex)); // Create a new sheet from filtered array of arrays
+                
+                var csv = XLSX.utils.aoa_to_sheet(filteredData.slice(headerRowIndex));
                 csv = XLSX.utils.sheet_to_csv(csv, { header: 1 });
                 return csv;
             } catch (e) {
@@ -74,7 +74,7 @@
         <section class="hero" aria-labelledby="sobre-title">
             <h1 id="sobre-title">Passadores de Semestres</h1>
             <p class="lead">Fortalecendo iniciativas sociais e conectando voluntários, doadores e projetos.</p>
-            <!-- Imagem: Baixar de Unsplash (ex.: trabalho social), otimizar, salvar como ong.jpg, ~100KB, 400px largura -->
+            
             <img src="assets/img/ong.jpg" alt="Equipe da ONG em atividade social" width="400" loading="lazy">
         </section>
         <section aria-labelledby="missao-title" id="missao" class="institucional">
@@ -86,7 +86,7 @@
             <ul class="grid" role="list">
                 <li>
                     <article>
-                        <!-- Imagem: Baixar de Unsplash (ex.: crianças estudando), otimizar, salvar como projeto1.jpg, ~80KB, 300px largura -->
+                        
                         <img src="assets/img/projeto1.jpg" alt="Oficinas de leitura" width="300" loading="lazy">
                         <h3>Oficinas de Leitura</h3>
                         <p>Descrição curta do projeto e impacto.</p>
@@ -95,7 +95,7 @@
                 </li>
                 <li>
                     <article>
-                        <!-- Imagem: Baixar de Unsplash (ex.: kits escolares), otimizar, salvar como projeto2.jpg, ~80KB, 300px largura -->
+                        
                         <img src="assets/img/projeto2.jpg" alt="Materiais para estudantes" width="300" loading="lazy">
                         <h3>Materiais para Estudantes</h3>
                         <p>Doações de livros e kits escolares.</p>
@@ -104,7 +104,7 @@
                 </li>
                 <li>
                     <article>
-                        <!-- Imagem: Baixar de Unsplash (ex.: ajuda humanitária), otimizar, salvar como projeto3.jpg, ~80KB, 300px largura -->
+                        
                         <img src="assets/img/projeto3.jpg" alt="Fundo de emergência" width="300" loading="lazy">
                         <h3>Fundo de Emergência</h3>
                         <p>Atendimento emergencial para famílias em risco.</p>
@@ -117,7 +117,7 @@
             <h2 id="contato-title">Contato</h2>
             <p>Email: <a href="mailto:contato@passadoresdesemestres.org">contato@passadoresdesemestres.org</a></p>
             <p>Telefone: (61) 99999-9999</p>
-            <!-- Imagem: Baixar de Unsplash (ex.: mapa ou fachada), otimizar, salvar como contato.jpg, ~100KB, 400px largura -->
+            
             <img src="assets/img/contato.jpg" alt="Localização da sede da ONG" width="400" loading="lazy">
         </section>
     </main>

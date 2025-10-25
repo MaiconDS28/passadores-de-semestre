@@ -12,22 +12,22 @@
                 var firstSheetName = workbook.SheetNames[0];
                 var worksheet = workbook.Sheets[firstSheetName];
 
-                // Convert sheet to JSON to filter blank rows
+                
                 var jsonData = XLSX.utils.sheet_to_json(worksheet, { header: 1, blankrows: false, defval: '' });
-                // Filter out blank rows (rows where all cells are empty, null, or undefined)
+                
                 var filteredData = jsonData.filter(row => row.some(filledCell));
 
-                // Heuristic to find the header row by ignoring rows with fewer filled cells than the next row
+                
                 var headerRowIndex = filteredData.findIndex((row, index) =>
                   row.filter(filledCell).length >= filteredData[index + 1]?.filter(filledCell).length
                 );
-                // Fallback
+                
                 if (headerRowIndex === -1 || headerRowIndex > 25) {
                   headerRowIndex = 0;
                 }
 
-                // Convert filtered JSON back to CSV
-                var csv = XLSX.utils.aoa_to_sheet(filteredData.slice(headerRowIndex)); // Create a new sheet from filtered array of arrays
+                
+                var csv = XLSX.utils.aoa_to_sheet(filteredData.slice(headerRowIndex));
                 csv = XLSX.utils.sheet_to_csv(csv, { header: 1 });
                 return csv;
             } catch (e) {
@@ -74,14 +74,14 @@
         <section class="hero" aria-labelledby="cap-title">
             <h1 id="cap-title">Captação de Recursos</h1>
             <p class="lead">Ajude a transformar vidas. Escolha uma campanha, doe pelo Pix ou simule uma doação por cartão.</p>
-            <!-- Imagem: Baixar de Unsplash (ex.: doação), otimizar, salvar como doacao.jpg, ~100KB, 400px largura -->
+            
             <img src="assets/img/doacao.jpg" alt="Ilustração de apoio às doações" width="400" loading="lazy">
         </section>
         <section aria-labelledby="campanhas-title" class="campanhas">
             <h2 id="campanhas-title">Campanhas em Destaque</h2>
             <ul class="campaign-list" role="list">
                 <li class="campaign-card" data-id="1" data-meta="5000" data-raised="2150">
-                    <!-- Imagem: Baixar de Unsplash (ex.: crianças estudando), otimizar, salvar como projeto1.jpg, ~80KB, 300px largura -->
+                    
                     <img src="assets/img/projeto1.jpg" alt="Campanha Arrecadação 2025" width="300" loading="lazy">
                     <div class="card-body">
                         <h3>Arrecadação 2025</h3>
@@ -100,7 +100,7 @@
                     </div>
                 </li>
                 <li class="campaign-card" data-id="2" data-meta="8000" data-raised="5200">
-                    <!-- Imagem: Baixar de Unsplash (ex.: kits escolares), otimizar, salvar como projeto2.jpg, ~80KB, 300px largura -->
+                    
                     <img src="assets/img/projeto2.jpg" alt="Campanha Materiais para Estudantes" width="300" loading="lazy">
                     <div class="card-body">
                         <h3>Materiais para Estudantes</h3>

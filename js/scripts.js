@@ -1,5 +1,5 @@
 ```javascript
-// Atualizar ano no rodapé
+
 document.addEventListener('DOMContentLoaded', () => {
     const year = new Date().getFullYear();
     ['ano', 'ano2', 'ano3'].forEach(id => {
@@ -7,7 +7,7 @@ document.addEventListener('DOMContentLoaded', () => {
         if (el) el.textContent = year;
     });
 
-    // Máscaras para formulário de cadastro
+    
     const applyMasks = () => {
         const cpf = document.getElementById('cpf');
         if (cpf) {
@@ -73,14 +73,14 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     };
 
-    // Adicionar eventos aos botões de doação
+    
     document.querySelectorAll('.btn-doar').forEach(button => {
         button.addEventListener('click', () => {
             openModal();
         });
     });
 
-    // Simulação de envio de formulários
+
     document.querySelectorAll('form').forEach(form => {
         form.addEventListener('submit', (e) => {
             e.preventDefault();
@@ -92,7 +92,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // Expor funções globais para o modal
+    
     window.openModal = openModal;
     window.closeModal = closeModal;
     window.copyPix = copyPix;

@@ -8,6 +8,8 @@
     --bg: #07111a;
     --muted: #9aa6b2;
     --card: #0b1220;
+    --lk: #ffffff;
+
 }
 
 * {
@@ -314,12 +316,11 @@ a:not(.cta):not(.btn):not(.btn-primary):not(.cta-outline) {
     color: var(--text);
 }
 
-
 .lead, .site-footer, .btn-ghost, label {
     color: var(--text);
 }
 
 .cta{
-    color: var(--bg);
+    color: var(--lk);
 
 }
